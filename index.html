@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./options.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assest/google-sheets-icon.svg"
+      type="image/x-icon"
+    />
+    <title>Google-Sheet-Clone</title>
+  </head>
+  <body>
+    <header>
+      <ul id="navbar">
+        <li>File</li>
+        <li class="active">Home</li>
+        <li>Insert</li>
+        <li>Layout</li>
+        <li>Help</li>
+      </ul>
+      <div id="options">
+        <form class="form">
+          <div id="tool-btns">
+            <input type="button" value="copy" name="copy" id="copyBtn"/>
+            <label class="material-icons" for="copyBtn"> content_copy </label>
+
+            <input type="button" value="cut" name="cut" id="cutBtn"/>
+            <label class="material-icons" for="cutBtn"> content_cut </label>
+
+            <input type="button" value="paste" name="paste" id="pasteBtn"/>
+            <label class="material-icons" for="pasteBtn"> content_paste </label>
+          </div>
+
+         <div id ="slct-ipt">
+          <select name="fontFamily" class="input select">
+            <option value="poppins-regular">Regular</option>
+            <option value="poppins-medium">Medium</option>
+            <option value="poppins-BlackItalic">BlackItalic</option>
+            <option value="poppins-Bold">Bold</option>
+            <option value="poppins-extra-bold">Extra-bold</option>
+          </select>
+          <input
+            class="input font"
+            type="number"
+            name="fontSize"
+            min="8"
+            max="32"
+            value="16"
+          />
+         </div>
+          <div class="tools">
+            <input type="checkbox" id="bold" name="isBold" />
+            <label for="bold" class="material-icons">format_bold</label>
+
+            <input type="checkbox" id="italic" name="isItalic" />
+            <label class="material-icons" for="italic"> format_italic </label>
+
+            <input type="checkbox" id="underline" name="isUnderline" />
+            <label class="material-icons" for="underline">
+              format_underlined
+            </label>
+          </div>
+
+          <div class="tools">
+            <input type="radio" name="align" value="left" id="left" checked />
+            <label class="material-icons" for="left"> format_align_left </label>
+
+            <input type="radio" name="align" value="center" id="center" />
+            <label class="material-icons" for="center"
+              >format_align_center</label
+            >
+
+            <input type="radio" name="align" value="right" id="right" />
+            <label class="material-icons" for="right">
+              format_align_right
+            </label>
+          </div>
+
+          <div id="paint">
+            <input type="color" name="textColor" id="textcolor" />
+            <label for="textcolor" class="material-icons"
+              >format_color_text</label
+            >
+            <input type="color" value="#ffffff" name="bgColor" id="bgcolor" />
+            <label for="bgcolor" class="material-icons"
+              >format_color_fill</label
+            >
+          </div>
+
+          <div id="updown">
+            <span id="downloadbtn" class="material-icons" onclick="exportData()"
+              >cloud_download</span
+            >
+            <input type="file" name="File" id="uploadbtn" value="" />
+            <label for="uploadbtn" class="material-icons">cloud_upload</label>
+          </div>
+        </form>
+      </div>
+
+      <div id="cell-state">
+        <div id="active-cell">null</div>
+        <div id="formula">f ( x )</div>
+        <input type="text" placeholder="" />
+      </div>
+    </header>
+
+    <main>
+      <div id="root">
+        <div id="header">
+          <div class="first"></div>
+        </div>
+        <div id="body">
+          <div id="sno"></div>
+          <div id="body-container"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+     <div id="sheet">
+      <input type="button" id="post_add" value="post_add" onclick="addSheet()" />
+      <label class="material-icons" for="post_add"> post_add </label>
+     </div>
+     <div class="sheets-folder-cont" id="sheetsContainer">
+
+     </div>
+    </footer>
+
+  
+    <script src="./funtionality.js"></script>
+    <script src="./script.js"></script>
+    <script src="./clipboard.js"></script>
+
+    <script src="./sheet.js"></script>
+ 
+  </body>
+</html>
